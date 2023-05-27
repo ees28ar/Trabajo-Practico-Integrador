@@ -1,0 +1,4 @@
+Eduardo; Soto; 90; Delantero; 5; 3; true; 10
+
+
+

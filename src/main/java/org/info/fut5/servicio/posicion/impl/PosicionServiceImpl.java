@@ -4,6 +4,10 @@ import org.info.fut5.dominio.Posicion;
 import org.info.fut5.servicio.entrada.console.Inputservice;
 import org.info.fut5.servicio.posicion.PosicionService;
 
+
+
+
+
 public class PosicionServiceImpl implements PosicionService {
 
     @Override
@@ -40,6 +44,7 @@ public class PosicionServiceImpl implements PosicionService {
     }
 
 }
+
 
 
 

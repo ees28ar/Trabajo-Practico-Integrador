@@ -1,4 +1,5 @@
-Eduardo; Soto; 90; Delantero; 5; 3; true; 10
-
-
-
+Diego; Maradona; 75; Delantero; 35; 71; true; 10
+Juan; Riquelme; 85; Delantero; 92; 388; false; 8
+Jorge; Bermudez; 82; Defensor; 16; 165; false; 2
+Hugo; Gatti; 93; Arquero; 4; 765; false; 1
+Antonio; Rattin; 78; Mediocampista; 28; 382; false; 5

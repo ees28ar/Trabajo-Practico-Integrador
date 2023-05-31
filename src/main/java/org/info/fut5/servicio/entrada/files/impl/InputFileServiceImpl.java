@@ -43,7 +43,7 @@ public class InputFileServiceImpl implements InputFileService {
                 String isCapitan = partes[6];
                 Boolean isCapitanJugador = Boolean.parseBoolean(isCapitan);
                 String camiseta= partes[7]
-;                Integer camisetaJugador = Integer.parseInt(camiseta.trim());
+;               Integer camisetaJugador = Integer.parseInt(camiseta.trim());
 
                 Posicion posicion = posicionService.getNombre(posicionNombre);
                 UUID idJugador = UUID.randomUUID();

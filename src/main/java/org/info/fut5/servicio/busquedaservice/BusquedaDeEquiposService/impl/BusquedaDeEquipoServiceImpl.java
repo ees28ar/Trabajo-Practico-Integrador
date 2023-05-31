@@ -1,6 +1,6 @@
 package org.info.fut5.servicio.busquedaservice.BusquedaDeEquiposService.impl;
 
-/*---BUSCA UN EQUIPO POR SU NOMBRE, IMPRIME SU NOMBRE, NOMBRE DE ENTRENADOR Y NOMBRE DEL CAPITÁN DEL EQUIPO.---*/
+
 
 import org.info.fut5.dominio.Equipo;
 import org.info.fut5.dominio.Jugador;
@@ -19,8 +19,9 @@ public class BusquedaDeEquipoServiceImpl implements BusquedaDeEquipoService {
         this.equipoManager = equipoManager;
     }
 
+    /*---BUSCA UN EQUIPO POR SU NOMBRE, IMPRIME SU NOMBRE, NOMBRE DE ENTRENADOR Y NOMBRE DEL CAPITÁN DEL EQUIPO.---*/
     @Override
-    public  void buscarEquipoPorNombre(List<Equipo> equipos) {
+    public void buscarEquipoPorNombre(List<Equipo> equipos) {
         System.out.print("Ingrese el nombre del jugador que desea buscar: ");
         String nombreEquipo = Inputservice.getScanner().nextLine();
 
@@ -28,12 +29,12 @@ public class BusquedaDeEquipoServiceImpl implements BusquedaDeEquipoService {
         List<Equipo> equipoBuscar = equipoManager.getEquipos();
         for (Equipo equipo : equipoBuscar) {
             List<Jugador> jugadores = equipo.getJugadores();
-            if (equipo.getNombre().equalsIgnoreCase(nombreEquipo)){
+            if (equipo.getNombre().equalsIgnoreCase(nombreEquipo)) {
                 equipoEncontrado = true;
                 System.out.println("Nombre: " + equipo.getNombre());
                 System.out.println("Entrenador: " + equipo.getEntrenador().getNombre());
-                for (Jugador jugador : jugadores){
-                    if (jugador.isEsCapitan()){
+                for (Jugador jugador : jugadores) {
+                    if (jugador.isEsCapitan()) {
                         System.out.println("Capitan:" + jugador.getNombre());
                     }
                 }
@@ -57,14 +58,14 @@ public class BusquedaDeEquipoServiceImpl implements BusquedaDeEquipoService {
         List<Equipo> equipoBuscar2 = equipoManager.getEquipos();
         for (Equipo equipo : equipoBuscar2) {
             List<Jugador> jugadores = equipo.getJugadores();
-            if (equipo.getNombre().equalsIgnoreCase(nombreEquipo)){
+            if (equipo.getNombre().equalsIgnoreCase(nombreEquipo)) {
                 equipoEncontrado = true;
                 System.out.println("Nombre: " + equipo.getNombre());
                 System.out.println("Entrenador: " + equipo.getEntrenador().getNombre());
                 System.out.println("Lista de Jugadores: ");
-                for (Jugador jugador : jugadores){
-                    System.out.println("** nombre=" + jugador.getNombre() + ", apellido=" + jugador.getApellido() + "id=" + jugador.getId()  + ", altura=" + jugador.getAltura() + ", posicion=" + jugador.getPosicion() + ", cantidadGoles=" + jugador.getCantidadGoles() + ", cantidadPartidosJugados="
-                            + jugador.getCantidadPartidosJugados() + ", esCapitan=" + jugador.isEsCapitan() + ", numeroCamiseta=" + jugador.getNumeroCamiseta()+ ".");
+                for (Jugador jugador : jugadores) {
+                    System.out.println("** nombre=" + jugador.getNombre() + ", apellido=" + jugador.getApellido() + "id=" + jugador.getId() + ", altura=" + jugador.getAltura() + ", posicion=" + jugador.getPosicion() + ", cantidadGoles=" + jugador.getCantidadGoles() + ", cantidadPartidosJugados="
+                            + jugador.getCantidadPartidosJugados() + ", esCapitan=" + jugador.isEsCapitan() + ", numeroCamiseta=" + jugador.getNumeroCamiseta() + ".");
                 }
                 System.out.println();
             }
@@ -74,10 +75,9 @@ public class BusquedaDeEquipoServiceImpl implements BusquedaDeEquipoService {
         }
 
 
-
-
     }
 
+    // elimina un equipo
     @Override
     public void eliminarEquipoPorNombre(List<Equipo> equipos) {
         System.out.print("Ingrese el nombre del equipo que desea eliminar: ");
@@ -117,6 +117,66 @@ public class BusquedaDeEquipoServiceImpl implements BusquedaDeEquipoService {
 
                 List<Jugador> sortedList = jugadores.stream()
                         .sorted(Comparator.comparing(Jugador::getNombre))
+                        .toList();
+                //collect(Collectors.toList())
+                System.out.println("Lista de Jugadores: ");
+                sortedList.forEach(System.out::println);
+                System.out.println();
+            }
+        }
+
+        if (!equipoEncontrado) {
+            System.out.println("No se encontró ningún Equipo con ese nombre.");
+        }
+    }
+
+    //	Buscar un equipo por su nombre, donde se muestre su nombre, nombre del entrenador y la lista de los jugadores del equipo ordenados por camiseta.
+    @Override
+    public void buscarEquipoPorNombre5(List<Equipo> equipos) {
+        System.out.print("Ingrese el nombre del Equipo que desea buscar: ");
+        String nombreEquipo = Inputservice.getScanner().nextLine();
+
+        boolean equipoEncontrado = false;
+        List<Equipo> equipoBuscar4 = equipoManager.getEquipos();
+        for (Equipo equipo : equipoBuscar4) {
+            List<Jugador> jugadores = equipo.getJugadores();
+            if (equipo.getNombre().equalsIgnoreCase(nombreEquipo)) {
+                equipoEncontrado = true;
+                System.out.println("Nombre: " + equipo.getNombre());
+                System.out.println("Entrenador: " + equipo.getEntrenador().getNombre());
+
+                List<Jugador> sortedList = jugadores.stream()
+                        .sorted(Comparator.comparing(Jugador::getNumeroCamiseta))
+                        .collect(Collectors.toList());
+                //collect(Collectors.toList()
+                System.out.println("Lista de Jugadores: ");
+                sortedList.forEach(System.out::println);
+                System.out.println();
+            }
+        }
+
+        if (!equipoEncontrado) {
+            System.out.println("No se encontró ningún Equipo con ese nombre.");
+        }
+    }
+    //	Buscar un equipo por su nombre, donde se muestre su nombre, nombre del entrenador y la lista de los jugadores del equipo ordenados por camiseta.
+    @Override
+    public void buscarEquipoPorNombre6(List<Equipo> equipos) {
+        System.out.print("Ingrese el nombre del Equipo que desea buscar: ");
+        String nombreEquipo = Inputservice.getScanner().nextLine();
+
+        boolean equipoEncontrado = false;
+        List<Equipo> equipoBuscar4 = equipoManager.getEquipos();
+        for (Equipo equipo : equipoBuscar4) {
+            List<Jugador> jugadores = equipo.getJugadores();
+            if (equipo.getNombre().equalsIgnoreCase(nombreEquipo)) {
+                equipoEncontrado = true;
+                System.out.println("Nombre: " + equipo.getNombre());
+                System.out.println("Entrenador: " + equipo.getEntrenador().getNombre());
+
+                List<Jugador> sortedList = jugadores.stream()
+                        .sorted(Comparator.comparing(Jugador::getNumeroCamiseta)
+                                .thenComparing(Comparator.comparing(Jugador::getPosicion)))
                         .collect(Collectors.toList());
 
                 System.out.println("Lista de Jugadores: ");
@@ -129,7 +189,4 @@ public class BusquedaDeEquipoServiceImpl implements BusquedaDeEquipoService {
             System.out.println("No se encontró ningún Equipo con ese nombre.");
         }
     }
-
-
 }
-

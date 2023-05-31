@@ -1,0 +1,3 @@
+Eduardo; Soto:90.0;false; Delantero;5;3;16bcf375-abf3-496e-a403-219234c93919;10;Boca;Jorge
+csdcsd;sdcsd:50.0;false;ARQUERO;5;2;d9750f57-167f-44d7-a6a4-acca7633aef6;9;river;frnachescoli
+asasc;dcsdc:20.0;true;ARQUERO;3;1;b590623b-13c2-4edf-9d0e-f856981f26b1;6;river;frnachescoli

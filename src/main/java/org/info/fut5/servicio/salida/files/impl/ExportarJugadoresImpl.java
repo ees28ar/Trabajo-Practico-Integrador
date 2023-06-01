@@ -16,11 +16,11 @@ public class ExportarJugadoresImpl implements ExportarJugadores {
             writer.newLine();
             writer.write("Nombre del Entrenador: " + nombreEntrenador);
             writer.newLine();
-            writer.newLine(); // Agregar una línea en blanco antes de la lista de jugadores
+            writer.newLine();
 
             for (Jugador jugador : jugadores) {
-                writer.write(jugador.toString());  // Escribe la representación del jugador en el archivo
-                writer.newLine();  // Agrega una nueva línea después de cada jugador
+                writer.write(jugador.toString());
+                writer.newLine();
             }
 
             System.out.println("Los jugadores se han exportado correctamente al archivo: " + rutaDestino);

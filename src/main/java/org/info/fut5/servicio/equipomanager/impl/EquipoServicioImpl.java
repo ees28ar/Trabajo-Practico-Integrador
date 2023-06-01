@@ -45,11 +45,15 @@ public class EquipoServicioImpl implements EquipoServicio {
             Equipo equipo = new Equipo(nombre, fechaCreacion, newEntrenador, new ArrayList<>());
             System.out.println("Indique como desea cargar la lista de Jugadores: (0) Manual - (1) Importar Lista");
             int cargaJugador = Inputservice.getScanner().nextInt();
+            Inputservice.getScanner().nextLine();
             if (cargaJugador==1){
-                String ruta= "C:\\Users\\Usuario\\Documents\\Informatorio 3ra Etapa\\TrabajoPracticoIntegrador\\GestorEquiposFutbol5\\src\\main\\java\\org\\info\\fut5\\resources\\jugadores_entrada.txt";
+                System.out.println("INGRESE RUTA DE DESTINO:");
+                System.out.println("ejempo: src/main/java/org/info/fut5/resources/jugadores_entrada.txt");
+                String ruta= Inputservice.getScanner().nextLine();
                 List<Jugador> jugadores =inputFileService.LoadJugadorByFile(ruta,equipo);
                 // Agrega los jugadores al equipo
                 equipo.setJugadores(jugadores);
+                System.out.println("Lista de Jugadrores cargados exitosamente de: "+ ruta);
          }else {
                 //  lista de jugadores
                 List<Jugador> nuevaListaJugadores = jugadorService.crearListaJugadores(equipo);

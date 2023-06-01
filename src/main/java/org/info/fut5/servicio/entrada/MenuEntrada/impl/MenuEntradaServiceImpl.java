@@ -1,9 +1,9 @@
 package org.info.fut5.servicio.entrada.MenuEntrada.impl;
 
-import com.sun.jdi.Bootstrap;
 import org.info.fut5.dominio.Equipo;
-import org.info.fut5.dominio.Jugador;
+
 import org.info.fut5.servicio.busquedaservice.BusquedaDeEquiposService.BusquedaDeEquipoService;
+
 import org.info.fut5.servicio.busquedaservice.BusquedaDeEquiposService.impl.BusquedaDeEquipoServiceImpl;
 import org.info.fut5.servicio.busquedaservice.BusquedaJugadorService.BusquedaJugadorService;
 import org.info.fut5.servicio.busquedaservice.BusquedaJugadorService.impl.BusquedaJugadorServiceImpl;
@@ -18,7 +18,7 @@ import java.util.List;
 
 public class MenuEntradaServiceImpl implements MenuEntradaService {
     private final EquipoServicio equipoManager;
-    private static final OutPutFileService outPutFileService = new OutPutFileServiceImpl();
+   // private static final OutPutFileService outPutFileService = new OutPutFileServiceImpl();
 
     public MenuEntradaServiceImpl() {
         equipoManager = new EquipoServicioImpl();
@@ -26,10 +26,13 @@ public class MenuEntradaServiceImpl implements MenuEntradaService {
 
 
 
+
+
     @Override
     public void mostrarMenuEntrada() {
+        List<Equipo> equiposnew = equipoManager.getEquipos();
         boolean salir = false;
-
+        Equipo equipoSeleccionado = null;
         do {
             System.out.println("\n\n\t*************************************************");
             System.out.println("\n\t  *BIENVENIDO AL GESTOR DE EQUIPOS DE FUTBOL 5*");
@@ -113,6 +116,7 @@ public class MenuEntradaServiceImpl implements MenuEntradaService {
                     BusquedaDeEquipoService busquedaEquipoPorNombre6 = new BusquedaDeEquipoServiceImpl(equipoManager);
                     //  buscarJugadorPorNombre pasando la lista de equipos
                     busquedaEquipoPorNombre6.buscarEquipoPorNombre3(equipoBuscar6);
+                    break;
                 case 9:
                     // lista de equipos creados
                     List<Equipo> equipoBuscar3 = equipoManager.getEquipos();
@@ -122,9 +126,11 @@ public class MenuEntradaServiceImpl implements MenuEntradaService {
                     eliminarEquipoPorNombre.eliminarEquipoPorNombre(equipoBuscar3);
                     break;
                 case 10:
-                    String rutaDestino= "C:\\Users\\Usuario\\Documents\\Informatorio 3ra Etapa\\TrabajoPracticoIntegrador\\GestorEquiposFutbol5\\src\\main\\java\\org\\info\\fut5\\resources\\jugadores_salida.txt";
-                    OutPutFileService exportador= new OutPutFileServiceImpl()
-;                   exportador.exportJugadores(equipoManager.getEquipos(), rutaDestino);
+                    System.out.println("INGRESE RUTA DE DESTINO:");
+                    System.out.println("ejempo: src/main/java/org/info/fut5/resources/jugadores_salida.txt");
+                    String rutaDestino= Inputservice.getScanner().nextLine();
+                    OutPutFileService exportador= new OutPutFileServiceImpl();
+                    exportador.exportJugadores(equipoManager.getEquipos(), rutaDestino);
                     break;
                 case 11:
                     salir = true;

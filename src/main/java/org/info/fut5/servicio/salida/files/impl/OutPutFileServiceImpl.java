@@ -28,9 +28,11 @@ public class OutPutFileServiceImpl implements OutPutFileService {
                             jugador.getEquipo().getEntrenador().getNombre();
                     writer.write(linea);
                     writer.newLine();
+
                 }
 
             }
+            System.out.println("Lista de Jugadores exportadas exitosamente a: "+ rutaDeDestino);
         } catch (IOException e) {
             e.printStackTrace();
         }

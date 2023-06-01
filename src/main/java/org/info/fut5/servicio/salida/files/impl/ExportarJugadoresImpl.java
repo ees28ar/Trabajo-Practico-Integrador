@@ -13,11 +13,8 @@ public class ExportarJugadoresImpl implements ExportarJugadores {
     public void exportarJugadores(List<Jugador> jugadores, String nombreEquipo, String nombreEntrenador, String rutaDestino) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(rutaDestino))) {
             writer.write("Nombre del Equipo: " + nombreEquipo);
+             writer.write("Nombre del Entrenador: " + nombreEntrenador);
             writer.newLine();
-            writer.write("Nombre del Entrenador: " + nombreEntrenador);
-            writer.newLine();
-            writer.newLine();
-
             for (Jugador jugador : jugadores) {
                 writer.write(jugador.toString());
                 writer.newLine();

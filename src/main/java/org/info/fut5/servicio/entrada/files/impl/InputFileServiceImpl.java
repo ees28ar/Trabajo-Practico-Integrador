@@ -36,14 +36,14 @@ public class InputFileServiceImpl implements InputFileService {
                 String altura = partes[2];
                 Integer alturaJugador = Integer.parseInt(altura.trim());
                 String posicionNombre = partes[3];
-                String goles= partes[4];
+                String goles = partes[4];
                 Integer golesConvertidos = Integer.parseInt(goles.trim());
-                String partidos= partes[5];
+                String partidos = partes[5];
                 Integer partidosJugador = Integer.parseInt(partidos.trim());
                 String isCapitan = partes[6];
                 Boolean isCapitanJugador = Boolean.parseBoolean(isCapitan);
-                String camiseta= partes[7]
-;               Integer camisetaJugador = Integer.parseInt(camiseta.trim());
+                String camiseta = partes[7];
+                Integer camisetaJugador = Integer.parseInt(camiseta.trim());
 
                 Posicion posicion = posicionService.getNombre(posicionNombre);
                 UUID idJugador = UUID.randomUUID();
@@ -55,8 +55,10 @@ public class InputFileServiceImpl implements InputFileService {
             }
         } catch (IOException e) {
 
-            throw new RuntimeException(e);
+            System.out.println("Error al importar los jugadores del archivo: " + rutaArchivo);
+            e.printStackTrace();
         }
-        return jugador;
+            return jugador;
+        }
+
     }
-}

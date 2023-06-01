@@ -40,14 +40,13 @@ public class EquipoServicioImpl implements EquipoServicio {
             String nombre = Inputservice.getScanner().nextLine();
             Entrenador newEntrenador = entrenadorService.crearEntrenador();
             LocalDateTime fechaCreacion = LocalDateTime.now();
-
             // Crea equipo sin jugadores
             Equipo equipo = new Equipo(nombre, fechaCreacion, newEntrenador, new ArrayList<>());
             System.out.println("Indique como desea cargar la lista de Jugadores: (0) Manual - (1) Importar Lista");
             int cargaJugador = Inputservice.getScanner().nextInt();
             Inputservice.getScanner().nextLine();
             if (cargaJugador==1){
-                System.out.println("INGRESE RUTA DE DESTINO:");
+                System.out.println("INGRESE RUTA DEL ARCHIVO:");
                 System.out.println("ejempo: src/main/java/org/info/fut5/resources/jugadores_entrada.txt");
                 String ruta= Inputservice.getScanner().nextLine();
                 List<Jugador> jugadores =inputFileService.LoadJugadorByFile(ruta,equipo);
@@ -64,7 +63,7 @@ public class EquipoServicioImpl implements EquipoServicio {
             equipos.add(equipo);
 
             System.out.println("Equipo creado y agregado a la lista de equipos.");
-            System.out.print("DESEA CARGAR OTRO EQUIPO: PRESIONE (1) PARA CONTINUAR ó (0) PARA FINALIZAR");
+            System.out.println("DESEA CARGAR OTRO EQUIPO: PRESIONE (1) PARA CONTINUAR ó (0) PARA FINALIZAR");
             condicion = Inputservice.getScanner().nextInt();
             Inputservice.getScanner().nextLine();
         } while (condicion == 1);

@@ -159,7 +159,7 @@ public class BusquedaDeEquipoServiceImpl implements BusquedaDeEquipoService {
                 List<Jugador> sortedList = jugadores.stream()
                         .sorted(Comparator.comparing(Jugador::getNumeroCamiseta))
                         .collect(Collectors.toList());
-                //collect(Collectors.toList()
+
                 System.out.println("Lista de Jugadores: ");
                 sortedList.forEach(System.out::println);
                 System.out.println("¿DESEA EXPORTAR LOS DATOS A UN ARCHIVO TIPO TXT?: (0) CANCELAR - (1) EXPORTAR: ");

@@ -15,8 +15,6 @@ public class EntrenadorServiceImpl implements EntrenadorService {
     public Entrenador crearEntrenador() {
 
         Entrenador entrenadorNuevo = new Entrenador();
-       // System.out.println("INGRESE EL NOMBRE DEL ENTRENADOR : ");
-
         String nombreEntrenador = "";
         do {
             System.out.print("INGRESE EL NOMBRE DEL ENTRENADOR : ");
@@ -32,8 +30,6 @@ public class EntrenadorServiceImpl implements EntrenadorService {
                 scanner.nextLine();
             }
         } while (nombreEntrenador.isEmpty());
-
-       // entrenadorNuevo.setNombre(Inputservice.getScanner().nextLine());
 
         String apellidoEntrenador = "";
         do {
@@ -51,9 +47,6 @@ public class EntrenadorServiceImpl implements EntrenadorService {
             }
         } while (apellidoEntrenador.isEmpty());
 
-        //System.out.println("INGRESE EL APELLIDO DEL ENTRENADOR : ");
-        //entrenadorNuevo.setApellido(Inputservice.getScanner().nextLine());
-
         int edadEntrenador = 0;
         do {
             System.out.print("INGRESE LA EDAD DEL ENTRENADOR : ");
@@ -66,8 +59,6 @@ public class EntrenadorServiceImpl implements EntrenadorService {
             }
         } while (edadEntrenador <= 0);
 
-        // System.out.println("INGRESE LA EDAD DEL ENTRENADOR : ");
-        //entrenadorNuevo.setEdad(Inputservice.getScanner().nextInt());
         return entrenadorNuevo;
     }
 

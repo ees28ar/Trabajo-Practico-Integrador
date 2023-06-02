@@ -18,7 +18,7 @@ import java.util.List;
 
 public class MenuEntradaServiceImpl implements MenuEntradaService {
     private final EquipoServicio equipoManager;
-   // private static final OutPutFileService outPutFileService = new OutPutFileServiceImpl();
+
 
     public MenuEntradaServiceImpl() {
         equipoManager = new EquipoServicioImpl();
@@ -30,7 +30,7 @@ public class MenuEntradaServiceImpl implements MenuEntradaService {
 
     @Override
     public void mostrarMenuEntrada() {
-        List<Equipo> equiposnew = equipoManager.getEquipos();
+
         boolean salir = false;
         Equipo equipoSeleccionado = null;
         do {

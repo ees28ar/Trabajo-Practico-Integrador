@@ -13,13 +13,11 @@ public class Posicion implements Comparable<Posicion> {
 
     @Override
     public String toString() {
-        return "Posicion [nombre=" + nombre + "]";
+        return nombre;
     }
 
     @Override
     public int compareTo(Posicion otraPosicion) {
-        // Implementa la lógica de comparación según tus necesidades
-        // Por ejemplo, si las posiciones son Strings, puedes usar el método compareTo de String
         return nombre.compareTo(otraPosicion.getNombre());
     }
 }

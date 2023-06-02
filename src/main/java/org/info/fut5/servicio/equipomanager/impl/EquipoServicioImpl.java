@@ -70,13 +70,6 @@ public class EquipoServicioImpl implements EquipoServicio {
 
 
     }
-    @Override
-    public void buscarJugadorPorNombre(List<Equipo> equipos) {
-        BusquedaJugadorService busquedaJugadorService = new BusquedaJugadorServiceImpl(this);
-        //(EquipoServicioImpl) equipos
-        busquedaJugadorService.buscarJugadorPorNombre(equipos);
-    }
-
 
     @Override
     public List<Equipo> getEquipos() {

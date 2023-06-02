@@ -23,8 +23,7 @@ public class ServicioJugadorimpl implements ServicioJugador {
         List<Jugador> jugadores = new ArrayList<>();
         System.out.println("A continuación, Ingrese los Datos de cada uno de los Jugadores que integran el Equipo: ");
         System.out.println("=====================================================================================");
-        //Inputservice.getScanner().nextLine(); // Limpia el Scanner
-
+        //Inputservice.getScanner().nextLine();
         int consulta=0;
         for (int i = 0; i < 2; i++) {
             boolean EsCapitan = false; // Guardar el capitán
@@ -44,8 +43,6 @@ public class ServicioJugadorimpl implements ServicioJugador {
                 }
             } while (nombreJugador.isEmpty());
 
-            //System.out.print("Nombre: ");
-            //String nombreJugador = Inputservice.getScanner().nextLine();
             System.out.print("Apellido: ");
             String apellidoJugador = Inputservice.getScanner().nextLine();
             double alturaJugador = 0.0;
@@ -55,13 +52,11 @@ public class ServicioJugadorimpl implements ServicioJugador {
                     alturaJugador = scanner.nextDouble();
                 } catch (InputMismatchException e) {
                     System.out.println("Error: Se esperaba un valor de tipo double.");
-                    scanner.nextLine(); // Limpiar el búfer del scanner
+                    scanner.nextLine();
                 }
             } while (alturaJugador <= 0.0);
 
 
-            //System.out.print("Altura: ");
-            //double alturaJugador = Inputservice.getScanner().nextDouble();
             int golesJugador = 0;
             do {
                 System.out.print("Cantidad de goles: ");
@@ -72,8 +67,6 @@ public class ServicioJugadorimpl implements ServicioJugador {
                     scanner.nextLine();
                 }
             } while (golesJugador <= 0);
-            //System.out.print("Cantidad de Goles: ");
-            //int golesJugador = Inputservice.getScanner().nextInt();
 
             int partidosJugador = 0;
             do {
@@ -86,9 +79,6 @@ public class ServicioJugadorimpl implements ServicioJugador {
                 }
             } while (partidosJugador <= 0);
 
-            //System.out.print("Cantidad de Partidos Jugados: ");
-            //int partidosJugador = Inputservice.getScanner().nextInt();
-
             int camisetaJugador = 0;
             do {
                 System.out.print("Número de Camiseta: ");
@@ -100,10 +90,7 @@ public class ServicioJugadorimpl implements ServicioJugador {
                 }
             } while (camisetaJugador <= 0);
 
-            //System.out.print("Número de Camiseta: ");
-            //int camisetaJugador = Inputservice.getScanner().nextInt();
             Posicion posicionJugador= posicionService.establecerPosicion();
-
 
             if (!EsCapitan) {
                 if (consulta != 1){
@@ -113,7 +100,7 @@ public class ServicioJugadorimpl implements ServicioJugador {
                 }
             }
 
-            Inputservice.getScanner().nextLine(); // Limpia el Scanner
+            Inputservice.getScanner().nextLine();
 
             Jugador jugador = new Jugador(idJugador, nombreJugador, apellidoJugador, alturaJugador, posicionJugador, golesJugador,
                     partidosJugador, EsCapitan, camisetaJugador, equipo);

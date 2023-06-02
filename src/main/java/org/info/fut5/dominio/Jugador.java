@@ -93,9 +93,9 @@ public class Jugador {
     }
     @Override
     public String toString() {
-        return "Jugador [id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", altura=" + altura
-                + ", posicion=" + posicion + ", cantidadGoles=" + cantidadGoles + ", cantidadPartidosJugados="
-                + cantidadPartidosJugados + ", esCapitan=" + esCapitan + ", numeroCamiseta=" + numeroCamiseta
+        return  "Jugador [id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", altura=" + altura
+                + ", posicion=" + posicion + ", cantidad de Goles=" + cantidadGoles + ", Cantidad de Partidos Jugados="
+                + cantidadPartidosJugados + ", Es Capitan?=" + esCapitan + ", Numero Camiseta=" + numeroCamiseta
                 + "]";
     }
 }

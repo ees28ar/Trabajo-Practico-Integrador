@@ -46,12 +46,8 @@ public class Equipo {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Equipo [nombre=").append(nombre).append(", fechaCreacion=").append(fechaCreacion)
-                .append(", entrenador=").append(entrenador.getNombre()).append(", jugadores=[");
-        for (Jugador jugador : jugadores) {
-            sb.append(jugador.getNombre()).append(", ");
-        }
-        sb.append("]]");
+        sb.append("Equipo [nombre=").append(nombre).append(", Fecha de Creacion=").append(fechaCreacion);
+        sb.append("]");
         return sb.toString();
     }
 }

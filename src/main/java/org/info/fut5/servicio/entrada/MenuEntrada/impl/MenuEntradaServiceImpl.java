@@ -107,7 +107,7 @@ public class MenuEntradaServiceImpl implements MenuEntradaService {
                     //  instancia de BusquedaDeEquipoServiceImpl pasando EquipoServicio
                     BusquedaDeEquipoService busquedaEquipoPorNombre5 = new BusquedaDeEquipoServiceImpl(equipoManager);
                     //  buscarJugadorPorNombre pasando la lista de equipos
-                    busquedaEquipoPorNombre5.buscarEquipoPorNombre3(equipoBuscar5);
+                    busquedaEquipoPorNombre5.buscarEquipoPorNombre5(equipoBuscar5);
                     break;
                 case 8:
                     //  la lista de equipos creados

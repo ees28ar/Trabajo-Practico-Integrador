@@ -1,4 +1,4 @@
-package org.info.fut5.servicio.busquedaservice.BusquedaDeEquiposService;
+package org.info.fut5.servicio.busquedaservice.equipos;
 
 import org.info.fut5.dominio.Equipo;
 

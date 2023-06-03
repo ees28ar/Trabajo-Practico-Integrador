@@ -1,8 +1,8 @@
-package org.info.fut5.servicio.busquedaservice.BusquedaJugadorService.impl;
+package org.info.fut5.servicio.busquedaservice.jugador.impl;
 
 import org.info.fut5.dominio.Equipo;
 import org.info.fut5.dominio.Jugador;
-import org.info.fut5.servicio.busquedaservice.BusquedaJugadorService.BusquedaJugadorService;
+import org.info.fut5.servicio.busquedaservice.jugador.BusquedaJugadorService;
 import org.info.fut5.servicio.entrada.console.Inputservice;
 import org.info.fut5.servicio.equipomanager.impl.EquipoServicioImpl;
 

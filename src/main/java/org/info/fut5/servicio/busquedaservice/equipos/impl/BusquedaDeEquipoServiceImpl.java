@@ -1,10 +1,10 @@
-package org.info.fut5.servicio.busquedaservice.BusquedaDeEquiposService.impl;
+package org.info.fut5.servicio.busquedaservice.equipos.impl;
 
 
 import org.info.fut5.servicio.salida.files.ExportarJugadores;
 import org.info.fut5.dominio.Equipo;
 import org.info.fut5.dominio.Jugador;
-import org.info.fut5.servicio.busquedaservice.BusquedaDeEquiposService.BusquedaDeEquipoService;
+import org.info.fut5.servicio.busquedaservice.equipos.BusquedaDeEquipoService;
 import org.info.fut5.servicio.entrada.console.Inputservice;
 import org.info.fut5.servicio.equipomanager.EquipoServicio;
 import org.info.fut5.servicio.salida.files.impl.ExportarJugadoresImpl;

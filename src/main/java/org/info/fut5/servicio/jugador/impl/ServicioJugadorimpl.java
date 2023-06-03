@@ -25,6 +25,11 @@ public class ServicioJugadorimpl implements ServicioJugador {
         System.out.println("=====================================================================================");
         //Inputservice.getScanner().nextLine();
         int consulta=0;
+        ingresaJugadores(equipo, jugadores, consulta);
+        return jugadores;
+    }
+
+    private void ingresaJugadores(Equipo equipo, List<Jugador> jugadores, int consulta) {
         for (int i = 0; i < 2; i++) {
             boolean EsCapitan = false; // Guardar el capitán
             UUID idJugador= UUID.randomUUID();
@@ -110,7 +115,6 @@ public class ServicioJugadorimpl implements ServicioJugador {
 
 
         }
-        return jugadores;
     }
 
 }

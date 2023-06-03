@@ -2,11 +2,11 @@ package org.info.fut5.servicio.entrada.MenuEntrada.impl;
 
 import org.info.fut5.dominio.Equipo;
 
-import org.info.fut5.servicio.busquedaservice.BusquedaDeEquiposService.BusquedaDeEquipoService;
+import org.info.fut5.servicio.busquedaservice.equipos.BusquedaDeEquipoService;
 
-import org.info.fut5.servicio.busquedaservice.BusquedaDeEquiposService.impl.BusquedaDeEquipoServiceImpl;
-import org.info.fut5.servicio.busquedaservice.BusquedaJugadorService.BusquedaJugadorService;
-import org.info.fut5.servicio.busquedaservice.BusquedaJugadorService.impl.BusquedaJugadorServiceImpl;
+import org.info.fut5.servicio.busquedaservice.equipos.impl.BusquedaDeEquipoServiceImpl;
+import org.info.fut5.servicio.busquedaservice.jugador.BusquedaJugadorService;
+import org.info.fut5.servicio.busquedaservice.jugador.impl.BusquedaJugadorServiceImpl;
 import org.info.fut5.servicio.entrada.console.Inputservice;
 import org.info.fut5.servicio.entrada.MenuEntrada.MenuEntradaService;
 import org.info.fut5.servicio.equipomanager.EquipoServicio;

@@ -3,8 +3,6 @@ package org.info.fut5.servicio.equipomanager.impl;
 import org.info.fut5.dominio.Entrenador;
 import org.info.fut5.dominio.Equipo;
 import org.info.fut5.dominio.Jugador;
-import org.info.fut5.servicio.busquedaservice.BusquedaJugadorService.BusquedaJugadorService;
-import org.info.fut5.servicio.busquedaservice.BusquedaJugadorService.impl.BusquedaJugadorServiceImpl;
 import org.info.fut5.servicio.entrada.console.Inputservice;
 import org.info.fut5.servicio.entrada.files.InputFileService;
 import org.info.fut5.servicio.entrada.files.impl.InputFileServiceImpl;

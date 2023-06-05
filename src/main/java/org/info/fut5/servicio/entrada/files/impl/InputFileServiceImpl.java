@@ -41,7 +41,12 @@ public class InputFileServiceImpl implements InputFileService {
                 String partidos = partes[5];
                 Integer partidosJugador = Integer.parseInt(partidos.trim());
                 String isCapitan = partes[6];
-                Boolean isCapitanJugador = Boolean.parseBoolean(isCapitan);
+                //Boolean isCapitanJugador = (isCapitan.equalsIgnoreCase("no")) ? true : false;
+                //Boolean isCapitanJugador= false;
+                /*if (isCapitan.equalsIgnoreCase("si")){
+                     isCapitanJugador=true;
+                };*/
+                Boolean isCapitanJugador = (isCapitan.equalsIgnoreCase("si"));
                 String camiseta = partes[7];
                 Integer camisetaJugador = Integer.parseInt(camiseta.trim());
 
@@ -50,15 +55,19 @@ public class InputFileServiceImpl implements InputFileService {
 
                 Jugador jugadorNuevo = new Jugador(idJugador, nombre, apellido, alturaJugador, posicion, golesConvertidos,
                         partidosJugador, isCapitanJugador, camisetaJugador, equipo);
-
                 jugador.add(jugadorNuevo);
+
+                System.out.println(isCapitan);
+                System.out.println(isCapitan.getClass().getSimpleName());
+                System.out.println(isCapitanJugador);
             }
         } catch (IOException e) {
 
             System.out.println("Error al importar los jugadores del archivo: " + rutaArchivo);
             e.printStackTrace();
         }
-            return jugador;
-        }
-
+        return jugador;
     }
+
+}
+

@@ -56,10 +56,10 @@ public class InputFileServiceImpl implements InputFileService {
                 Jugador jugadorNuevo = new Jugador(idJugador, nombre, apellido, alturaJugador, posicion, golesConvertidos,
                         partidosJugador, isCapitanJugador, camisetaJugador, equipo);
                 jugador.add(jugadorNuevo);
-
-                System.out.println(isCapitan);
-                System.out.println(isCapitan.getClass().getSimpleName());
-                System.out.println(isCapitanJugador);
+                /*Prubeas realizadas para encontara el motivo de porque no reconoce true, al texto ingresado como capitan*/
+                //System.out.println(isCapitan);
+                //System.out.println(isCapitan.getClass().getSimpleName());
+                ///System.out.println(isCapitanJugador);
             }
         } catch (IOException e) {
 

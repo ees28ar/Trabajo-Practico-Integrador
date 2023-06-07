@@ -14,7 +14,9 @@ import org.info.fut5.servicio.jugador.impl.ServicioJugadorimpl;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class EquipoServicioImpl implements EquipoServicio {
     private List<Equipo> equipos;
@@ -28,52 +30,47 @@ public class EquipoServicioImpl implements EquipoServicio {
     }
 
 
-
-
     @Override
     public void crearEquipo() {
-        int condicion = 1;
-        do {
-            System.out.print("INGRESE EL NOMBRE DEL EQUIPO: ");
-            String nombre = Inputservice.getScanner().nextLine();
-            Entrenador newEntrenador = entrenadorService.crearEntrenador();
-            LocalDateTime fechaCreacion = LocalDateTime.now();
-            // Crea equipo sin jugadores
-            Equipo equipo = new Equipo(nombre, fechaCreacion, newEntrenador, new ArrayList<>());
-            System.out.println("Indique como desea cargar la lista de Jugadores: (0) Manual - (1) Importar Lista");
-            int cargaJugador = Inputservice.getScanner().nextInt();
-            Inputservice.getScanner().nextLine();
-            if (cargaJugador==1){
-                System.out.println("INGRESE RUTA DEL ARCHIVO:");
-                System.out.println("ejempo: src/main/java/org/info/fut5/resources/jugadores_entrada.txt");
-                String ruta= Inputservice.getScanner().nextLine();
-                List<Jugador> jugadores =inputFileService.LoadJugadorByFile(ruta,equipo);
-                // Agrega los jugadores al equipo
-                equipo.setJugadores(jugadores);
-                System.out.println("Lista de Jugadrores cargados exitosamente de: "+ ruta);
-         }else {
-                //  lista de jugadores
-                List<Jugador> nuevaListaJugadores = jugadorService.crearListaJugadores(equipo);
+           int condicion = 1;
+            do {
+                System.out.print("INGRESE EL NOMBRE DEL EQUIPO: ");
+                String nombre = Inputservice.getScanner().nextLine();
+                Entrenador newEntrenador = entrenadorService.crearEntrenador();
+                LocalDateTime fechaCreacion = LocalDateTime.now();
+                // Crea equipo sin jugadores
+                Equipo equipo = new Equipo(nombre, fechaCreacion, newEntrenador, new ArrayList<>());
+                System.out.println("Indique como desea cargar la lista de Jugadores: (0) Manual - (1) Importar Lista");
+                int cargaJugador = Inputservice.getScanner().nextInt();
+                Inputservice.getScanner().nextLine();
+                if (cargaJugador == 1) {
+                    System.out.println("INGRESE RUTA DEL ARCHIVO:");
+                    System.out.println("ejempo: src/main/java/org/info/fut5/resources/jugadores_entrada.txt");
+                    String ruta = Inputservice.getScanner().nextLine();
+                    List<Jugador> jugadores = inputFileService.LoadJugadorByFile(ruta, equipo);
+                    // Agrega los jugadores al equipo
+                    equipo.setJugadores(jugadores);
+                    System.out.println("Lista de Jugadrores cargados exitosamente de: " + ruta);
+                } else {
+                    //  lista de jugadores
+                    List<Jugador> nuevaListaJugadores = jugadorService.crearListaJugadores(equipo);
 
-                // Actualizar la lista de jugadores del equipo
-                equipo.setJugadores(nuevaListaJugadores);
-            }
-            equipos.add(equipo);
+                    // Actualizar la lista de jugadores del equipo
+                    equipo.setJugadores(nuevaListaJugadores);
+                }
+                equipos.add(equipo);
 
-            System.out.println("Equipo creado y agregado a la lista de equipos.");
-            System.out.println("DESEA CARGAR OTRO EQUIPO: PRESIONE (1) PARA CONTINUAR ó (0) PARA FINALIZAR");
-            condicion = Inputservice.getScanner().nextInt();
-            Inputservice.getScanner().nextLine();
-        } while (condicion == 1);
+                System.out.println("Equipo creado y agregado a la lista de equipos.");
+                System.out.println("DESEA CARGAR OTRO EQUIPO: PRESIONE (1) PARA CONTINUAR ó (0) PARA FINALIZAR");
+                condicion = Inputservice.getScanner().nextInt();
+                Inputservice.getScanner().nextLine();
+            } while (condicion == 1);
 
-
-    }
+        }
 
     @Override
     public List<Equipo> getEquipos() {
         return equipos;
     }
-
-
 
 }

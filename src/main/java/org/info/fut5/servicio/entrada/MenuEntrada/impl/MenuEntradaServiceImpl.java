@@ -29,7 +29,6 @@ public class MenuEntradaServiceImpl implements MenuEntradaService {
 
     @Override
     public void mostrarMenuEntrada() {
-
         boolean salir = false;
         Equipo equipoSeleccionado = null;
         do {

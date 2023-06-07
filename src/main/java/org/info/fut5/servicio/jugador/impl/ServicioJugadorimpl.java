@@ -30,7 +30,7 @@ public class ServicioJugadorimpl implements ServicioJugador {
     }
 
     private void ingresaJugadores(Equipo equipo, List<Jugador> jugadores, int consulta) {
-        for (int i = 0; i < 2; i++) {
+        for (int i = 0; i < 6; i++) {
             boolean EsCapitan = false; // Guardar el capitán
             UUID idJugador= UUID.randomUUID();
             System.out.println("Ingrese los datos del jugador " + (i + 1) + ":");

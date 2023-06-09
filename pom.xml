@@ -31,4 +31,26 @@
     </dependency>
 
   </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <!-- Aqui pueden venir mas detalles
+        ...
+        -->
+        <configuration>
+          <archive>
+            <manifest>
+              <addClasspath>true</addClasspath>
+              <mainClass>org.info.fut5.App</mainClass>
+            </manifest>
+          </archive>
+        </configuration>
+        <!-- Aqui pueden venir mas detalles
+        ...
+        -->
+      </plugin>
+    </plugins>
+  </build>
 </project>

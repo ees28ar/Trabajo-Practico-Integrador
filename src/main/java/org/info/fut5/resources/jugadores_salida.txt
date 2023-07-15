@@ -1,5 +1,0 @@
-Diego; Maradona:75.0;false; Delantero;35;71;33696309-eff5-40a0-9ec0-c4de599047ea;10;boca;almiron
-Juan; Riquelme:85.0;false; Delantero;92;388;80c32001-541d-415e-b254-4c1e830f9910;8;boca;almiron
-Jorge; Bermudez:82.0;false; Defensor;16;165;4ee78d62-80b5-43d7-8fb3-2ce7cf9da922;2;boca;almiron
-Hugo; Gatti:93.0;false; Arquero;4;765;51b414ac-b7d6-4918-b180-639392c59590;1;boca;almiron
-Antonio; Rattin:78.0;false; Mediocampista;28;382;6f4d7f7e-ff0c-40d4-9b96-6d0028e23322;5;boca;almiron

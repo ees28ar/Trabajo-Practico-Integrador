@@ -13,38 +13,35 @@ import java.util.InputMismatchException;
 import java.util.List;
 import java.util.UUID;
 
-import static org.info.fut5.servicio.entrada.console.Inputservice.scanner;
-
 public class ServicioJugadorimpl implements ServicioJugador {
     private final PosicionService posicionService = new PosicionServiceImpl();
 
     @Override
     public List<Jugador> crearListaJugadores(Equipo equipo) {
         List<Jugador> jugadores = new ArrayList<>();
-        System.out.println("A continuación, Ingrese los Datos de cada uno de los Jugadores que integran el Equipo: ");
+        System.out.println("A continuación, ingrese los datos de cada uno de los jugadores que integran el equipo:");
         System.out.println("=====================================================================================");
-        //Inputservice.getScanner().nextLine();
-        int consulta=0;
-        ingresaJugadores(equipo, jugadores, consulta);
+        int consulta = 0;
+        ingresarJugadores(equipo, jugadores, consulta);
         return jugadores;
     }
 
-    private void ingresaJugadores(Equipo equipo, List<Jugador> jugadores, int consulta) {
+    private void ingresarJugadores(Equipo equipo, List<Jugador> jugadores, int consulta) {
         for (int i = 0; i < 6; i++) {
-            boolean EsCapitan = false; // Guardar el capitán
-            UUID idJugador= UUID.randomUUID();
+            boolean esCapitan = false; // Guardar el capitán
+            UUID idJugador = UUID.randomUUID();
             System.out.println("Ingrese los datos del jugador " + (i + 1) + ":");
             String nombreJugador = "";
             do {
-                System.out.print("nombre: ");
+                System.out.print("Nombre: ");
                 try {
-                    if (scanner.hasNextInt()) {
+                    if (Inputservice.getScanner().hasNextInt()) {
                         throw new InputMismatchException("Se esperaba un valor de tipo String, no un entero");
                     }
-                    nombreJugador = scanner.nextLine();
+                    nombreJugador = Inputservice.getScanner().nextLine();
                 } catch (InputMismatchException e) {
                     System.out.println(e.getMessage());
-                    scanner.nextLine();
+                    Inputservice.getScanner().nextLine();
                 }
             } while (nombreJugador.isEmpty());
 
@@ -54,22 +51,21 @@ public class ServicioJugadorimpl implements ServicioJugador {
             do {
                 System.out.print("Ingrese la altura del jugador: ");
                 try {
-                    alturaJugador = scanner.nextDouble();
+                    alturaJugador = Inputservice.getScanner().nextDouble();
                 } catch (InputMismatchException e) {
                     System.out.println("Error: Se esperaba un valor de tipo double.");
-                    scanner.nextLine();
+                    Inputservice.getScanner().nextLine();
                 }
             } while (alturaJugador <= 0.0);
-
 
             int golesJugador = 0;
             do {
                 System.out.print("Cantidad de goles: ");
                 try {
-                    golesJugador = scanner.nextInt();
+                    golesJugador = Inputservice.getScanner().nextInt();
                 } catch (InputMismatchException e) {
                     System.out.println("Error: Se esperaba un valor de tipo entero.");
-                    scanner.nextLine();
+                    Inputservice.getScanner().nextLine();
                 }
             } while (golesJugador <= 0);
 
@@ -77,10 +73,10 @@ public class ServicioJugadorimpl implements ServicioJugador {
             do {
                 System.out.print("Cantidad de Partidos Jugados: ");
                 try {
-                    partidosJugador = scanner.nextInt();
+                    partidosJugador = Inputservice.getScanner().nextInt();
                 } catch (InputMismatchException e) {
                     System.out.println("Error: Se esperaba un valor de tipo entero.");
-                    scanner.nextLine();
+                    Inputservice.getScanner().nextLine();
                 }
             } while (partidosJugador <= 0);
 
@@ -88,33 +84,29 @@ public class ServicioJugadorimpl implements ServicioJugador {
             do {
                 System.out.print("Número de Camiseta: ");
                 try {
-                    camisetaJugador = scanner.nextInt();
+                    camisetaJugador = Inputservice.getScanner().nextInt();
                 } catch (InputMismatchException e) {
                     System.out.println("Error: Se esperaba un valor de tipo entero.");
-                    scanner.nextLine();
+                    Inputservice.getScanner().nextLine();
                 }
             } while (camisetaJugador <= 0);
 
-            Posicion posicionJugador= posicionService.establecerPosicion();
+            Posicion posicionJugador = posicionService.establecerPosicion();
 
-            if (!EsCapitan) {
-                if (consulta != 1){
+            if (!esCapitan) {
+                if (consulta != 1) {
                     System.out.print("¿El jugador es capitán del equipo? Ingrese (0) para NO o (1) para SÍ: ");
                     consulta = Inputservice.getScanner().nextInt();
-                    EsCapitan = (consulta == 1);
+                    esCapitan = (consulta == 1);
                 }
             }
 
             Inputservice.getScanner().nextLine();
 
-            Jugador jugador = new Jugador(idJugador, nombreJugador, apellidoJugador, alturaJugador, posicionJugador, golesJugador,
-                    partidosJugador, EsCapitan, camisetaJugador, equipo);
-
+            Jugador jugador = new Jugador(idJugador, nombreJugador, apellidoJugador, alturaJugador, posicionJugador,
+                    golesJugador, partidosJugador, esCapitan, camisetaJugador, equipo);
 
             jugadores.add(jugador);
-
-
         }
     }
-
 }
